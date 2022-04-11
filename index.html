@@ -4,133 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./script.js" defer></script>
     <title>Document</title>
 </head>
-<body>
-    <script>
+  <body> 
+<button class="weapon" id="rock">ROCK</button>
+<button class="weapon" id="paper">PAPER</button>
+<button class="weapon" id="scissors">SCISSORS</button>  
+<div id="info">
+  <div id="info2"></div>
+</div>
 
-    /* version que llama funcion:
+<div id="div3"></div>
+<div id="div4"></div>
 
-    function getRandomNum() {
-        return  Math.floor(Math.random()*(4-1)) + 1;
-    }
-
-    function computerChooses() {
-
-      if (getRandomNum() == 1) {
-          return "rock";
-      } 
-      if (getRandomNum() == 2) {
-          return "paper";
-      }
-      if (getRandomNum() == 3) {
-          return "scissors";
-      }
-    }
-*/ 
-
-
-// version con variables
-
-    let computerScore = 0;
-    let userScore = 0;
-    function computerChooses() {
-        randomNum =  Math.floor(Math.random()*(4-1)) + 1;
-        if (randomNum == 1) {
-            return "rock";
-        } 
-        if (randomNum == 2) {
-            return "paper";
-        }
-        if (randomNum == 3) {
-            return "scissors";
-        }
-      }
-      
-    function evalMatch(computerChoice, userChoice) {
-        if (userChoice == null) {
-            return "bye bye";
-        }
-        userChoiceLower = userChoice.toLowerCase();
-
-      if (computerChoice == "rock") {
-          if (userChoiceLower == "paper") {
-              ++userScore;
-              return `you win; partial score ${userScore} - ${computerScore}` ;
-          }
-          if (userChoiceLower == "scissors") {
-              ++computerScore;
-              return `you lose; Partial score ${userScore} - ${computerScore}`;
-          }
-        }
-      if (computerChoice == "paper") {
-          if (userChoiceLower == "scissors") {
-              ++userScore;
-              return `You win; Partial score: ${userScore} - ${computerScore}`;
-          }
-          if (userChoiceLower == "rock") {
-              ++computerScore;
-              return `You lose; partial score: ${userScore} - ${computerScore}`;
-          }   
-        }
-      if (computerChoice == "scissors") {
-          if (userChoiceLower == "rock") {
-              ++userScore;
-              return `You win; Partial score: ${userScore} - ${computerScore}`;
-          }
-          if (userChoiceLower == "paper") {
-              ++computerScore;
-              return `You los; partial score: ${userScore} - ${computerScore}`;
-          }
-        }
-        if (computerChoice == userChoiceLower) {
-          return `It's a tie; Partial score: ${userScore} - ${computerScore}`;
-      }
-        else {
-        return "invalid choice " + `Partial score: ${userScore} - ${computerScore}`;
-      }
-    }
-    
-    function play1Round(weapon) {
-        console.log(evalMatch(computerChooses(), weapon));
-    }
-
-    function play5Rounds() {
-       
-        for (let i = 0; i < 5; i++) {
-          play1Round(prompt("ENTER YOUR WEAPON", "WEAPON HERE"));
-        
-    }
-        console.log("USER SCORE =" + userScore);
-        console.log("COMPUTER SCORE =" + computerScore);
-        if (computerScore > userScore) {
-            console.log("FINAL SCORE: COMPUTER WINS")
-        } else if (computerScore < userScore) {
-            console.log("FINAL SCORE: YOU WIN");        
-        } else if (computerScore == userScore)  {
-            console.log("FINAL SCORE: IT'S A TIE");
-        } else {
-            console.log("something weird happened");
-        }
-    }
-   
-
-
-/*        let playerScore = 0;
-        let computerScore = 0;
-       // for (let i = 0; i < 5; i++) {
-            if (playRound(computerChooses(), weapon) == "YOU WON") {
-                playerScore ++;
-            } else if (playRound(computerChooses(), weapon) == "COMPUTER WON") {
-                computerScore ++;
-            } 
-*/
-        
-    play5Rounds();
-   // play5Rounds(prompt("enter your weapon", "weapon here"));
-
-    //}
-
-    </script>
-</body>
+  </body>
 </html>
