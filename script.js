@@ -32,41 +32,41 @@ function evalMatch(computerChoice, userChoice) {
           ++userScore;
           ++counter;
           
-          return `you win; partial score ${userScore} - ${computerScore}` ;
+          return `Computer chose rock; Partial score: You ${userScore}, Computer: ${computerScore}` ;
       }
       if (userChoiceLower == "scissors") {
           ++computerScore;
           ++counter;
-          return `you lose; Partial score ${userScore} - ${computerScore}`;
+          return `Computer chose rock; Partial score: You ${userScore}, Computer ${computerScore}`;
       }
     }
   if (computerChoice == "paper") {
       if (userChoiceLower == "scissors") {
           ++userScore;
           ++counter;
-          return `You win; Partial score: ${userScore} - ${computerScore}`;
+          return `Computer chose Paper; Partial score: You ${userScore} - Computer: ${computerScore}`;
       }
       if (userChoiceLower == "rock") {
           ++computerScore;
           ++counter;
-          return `You lose; partial score: ${userScore} - ${computerScore}`;
+          return `Computer chose Paper; partial score: You: ${userScore} - Computer: ${computerScore}`;
       }   
     }
   if (computerChoice == "scissors") {
       if (userChoiceLower == "rock") {
           ++userScore;
           ++counter;
-          return `You win; Partial score: ${userScore} - ${computerScore}`;
+          return `Computer chose Scissors; Partial score: You: ${userScore} - Computer: ${computerScore}`;
       }
       if (userChoiceLower == "paper") {
           ++computerScore;
           ++counter;
-          return `Computer chose ${computerChoice} partial score: ${userScore} - ${computerScore}`;
+          return `Computer chose Scissors; partial score: You: ${userScore} - Computer ${computerScore}`;
       }
     }
     if (computerChoice == userChoiceLower) {
         ++counter;
-      return `It's a tie; Partial score: ${userScore} - ${computerScore}`;
+      return `Computer chose ${computerChoice}: It's a tie; Partial score: You ${userScore} - Computer: ${computerScore}`;
   }
     else {
     return "invalid choice " + `Partial score: ${userScore} - ${computerScore}`;
